@@ -116,7 +116,13 @@ export default function Navbar({
           {/* Logo */}
           <a href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}>
             <div style={{ position: "relative", width: isMobile ? 110 : 140, height: isMobile ? 36 : 44 }}>
-              <Image src="/logo.png" alt="Fiasco Consultancy" fill sizes="140px" style={{ objectFit: "contain", objectPosition: "left center" }} priority />
+              <Image
+                src={dark ? "/logo.png" : "/logo-light.png"}
+                alt="Fiasco Consultancy"
+                fill sizes="140px"
+                style={{ objectFit: "contain", objectPosition: "left center" }}
+                priority
+              />
             </div>
           </a>
 
