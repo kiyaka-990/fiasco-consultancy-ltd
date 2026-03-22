@@ -26,7 +26,7 @@ export default function ProjectsPage() {
           <PageHero tag="Case Studies" title="Crises We've Resolved" sub="Real results from real interventions. Every engagement represents a business pulled back from the brink." t={t} />
 
           {/* Filter tabs — scrollable on mobile */}
-          <div style={{ padding: "0 16px 48px", overflowX: "auto", WebkitOverflowScrolling: "touch" as unknown as undefined }}>
+          <div style={{ padding: "0 16px 48px", overflowX: "auto" as const }}>
             <div style={{ display: "flex", gap: 8, justifyContent: "center", minWidth: "max-content", margin: "0 auto", padding: "0 4px" }}>
               {CATS.map(c => (
                 <button key={c} onClick={() => setFilter(c)} style={{ padding: "8px 16px", borderRadius: 100, border: `1px solid ${filter === c ? t.gold : t.bdr}`, background: filter === c ? `linear-gradient(135deg,${t.gold},${t.goldDark})` : "transparent", color: filter === c ? "#1A1000" : t.fg, fontSize: 12, fontFamily: t.sans, cursor: "pointer", fontWeight: filter === c ? 700 : 400, transition: t.T, whiteSpace: "nowrap" as const, flexShrink: 0, boxShadow: filter === c ? `0 4px 16px rgba(200,168,75,0.4)` : "none" }}>{c}</button>

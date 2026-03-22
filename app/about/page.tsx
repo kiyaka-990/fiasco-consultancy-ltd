@@ -89,7 +89,7 @@ export default function AboutPage() {
                     <div style={{ width: 48, height: 48, borderRadius: "50%", background: `linear-gradient(135deg,${t.gold},${t.goldDark})`, display: "flex", alignItems: "center", justifyContent: "center", color: "#1A1000", fontWeight: 800, fontSize: 11, fontFamily: t.sans, boxShadow: `0 4px 16px rgba(200,168,75,0.4)`, flexShrink: 0 }}>{m.year}</div>
                     {i < MILESTONES.length - 1 && <div style={{ width: 2, flex: 1, minHeight: 24, background: `linear-gradient(to bottom,rgba(200,168,75,0.4),transparent)`, marginTop: 6 }} />}
                   </div>
-                  <div style={{ ...glassCard(t, { padding: "clamp(14px,3vw,20px) clamp(16px,3vw,24px)", flex: 1 as unknown as string }), marginTop: 4 }}>
+                  <div style={{ ...glassCard(t, { padding: "clamp(14px,3vw,20px) clamp(16px,3vw,24px)" }), marginTop: 4, flex: 1 }}>
                     <div style={{ fontWeight: 700, fontSize: "clamp(14px,2vw,16px)", marginBottom: 5, fontFamily: t.sans, color: t.fg }}>{m.t}</div>
                     <div style={{ fontSize: 13, color: t.fgMuted, fontFamily: t.sans, lineHeight: 1.7 }}>{m.d}</div>
                   </div>

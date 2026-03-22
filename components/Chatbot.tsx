@@ -236,19 +236,18 @@ export default function Chatbot({ dark: darkProp }: ChatbotProps) {
                         gap: 8,
                         padding: "10px 12px",
                         borderRadius: 12,
-                        background: dark ? "rgba(200,168,75,0.06)" : "rgba(26,16,0,0.04)",
-                        border: `1px solid ${t.bdr}`,
                         cursor: "pointer",
                         textAlign: "left" as const,
                         transition: t.T,
                         fontFamily: t.sans,
-                        // Make "Type a Message" span full width
-                        gridColumn: item.query === "" ? "1 / -1" : undefined,
+                        gridColumn: item.query === "" ? ("1 / -1" as React.CSSProperties["gridColumn"]) : undefined,
                         background: item.query === ""
                           ? `linear-gradient(135deg,rgba(200,168,75,0.12),rgba(200,168,75,0.06))`
                           : dark ? "rgba(200,168,75,0.06)" : "rgba(26,16,0,0.04)",
-                        border: item.query === "" ? `1px solid rgba(200,168,75,0.4)` : `1px solid ${t.bdr}`,
-                      } as React.CSSProperties}
+                        border: item.query === ""
+                          ? `1px solid rgba(200,168,75,0.4)`
+                          : `1px solid ${t.bdr}`,
+                      }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.background = dark ? "rgba(200,168,75,0.12)" : "rgba(200,168,75,0.08)";
                         e.currentTarget.style.borderColor = `rgba(200,168,75,0.4)`;

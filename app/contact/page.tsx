@@ -10,7 +10,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState<FormState>({ name: "", email: "", phone: "", service: "", message: "" });
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>, t: ReturnType<typeof import("@/lib/theme").theme>): void => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (formData.name && formData.email) setSent(true);
   };
@@ -54,7 +54,7 @@ export default function ContactPage() {
                       <button onClick={() => setSent(false)} style={{ background: "transparent", border: `1px solid ${t.bdr}`, color: t.gold, borderRadius: 10, padding: "10px 22px", cursor: "pointer", fontFamily: t.sans, fontSize: 13 }}>Send Another</button>
                     </div>
                   ) : (
-                    <form onSubmit={(e) => handleSubmit(e, t)} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                       <h2 style={{ fontSize: "clamp(18px,3vw,22px)", fontWeight: 700, fontFamily: t.serif, marginBottom: 4, color: t.gold }}>Schedule a Fiasco Audit</h2>
                       <p style={{ fontSize: 12, color: t.fgMuted, fontFamily: t.sans, lineHeight: 1.6, marginBottom: 4 }}>All initial consultations are 100% confidential and free.</p>
                       <div>

@@ -27,7 +27,7 @@ export default function BlogPage() {
           <PageHero tag="Insights" title="Blog & Articles" sub="Thought leadership on crisis management, turnaround strategy, and East African business resilience — written by our specialists." t={t} />
 
           {/* Filter — scrollable on mobile */}
-          <div style={{ padding: "0 16px 48px", overflowX: "auto", WebkitOverflowScrolling: "touch" as unknown as undefined }}>
+          <div style={{ padding: "0 16px 48px", overflowX: "auto" as const }}>
             <div style={{ display: "flex", gap: 8, justifyContent: "center", minWidth: "max-content", margin: "0 auto", padding: "0 4px" }}>
               {CATS.map(c => (
                 <button key={c} onClick={() => setFilter(c)} style={{ padding: "8px 16px", borderRadius: 100, border: `1px solid ${filter === c ? t.gold : t.bdr}`, background: filter === c ? `linear-gradient(135deg,${t.gold},${t.goldDark})` : "transparent", color: filter === c ? "#1A1000" : t.fg, fontSize: 12, fontFamily: t.sans, cursor: "pointer", fontWeight: filter === c ? 700 : 400, transition: t.T, whiteSpace: "nowrap" as const, flexShrink: 0 }}>{c}</button>
@@ -38,7 +38,7 @@ export default function BlogPage() {
           <Section style={{ paddingTop: 0 }}>
             {/* Featured article — stacks to single column on mobile */}
             {featured && (
-              <div style={{ ...glassCard(t, { overflow: "hidden", marginBottom: 32 }), display: "grid", gridTemplateColumns: "clamp(200px,45%,1fr) 1fr" }}>
+              <div style={{ ...glassCard(t, { overflow: "hidden", marginBottom: 32 }), display: "grid", gridTemplateColumns: "minmax(200px,45%) 1fr" }}>
                 <div style={{ minHeight: 260, overflow: "hidden", position: "relative" }}>
                   <Image src={featured.img} alt={featured.title} fill sizes="(max-width:600px) 100vw,45vw" style={{ objectFit: "cover", filter: "brightness(0.6)" }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right,transparent,rgba(8,12,20,0.3))" }} />
