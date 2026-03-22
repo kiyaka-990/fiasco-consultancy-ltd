@@ -118,7 +118,7 @@ export default function Footer({ scrollTo = () => {}, dark = true }: FooterProps
           <div style={{ fontSize: 12, color: F_MUTED }}>© 2026 Fiasco Consultancy Ltd — All Rights Reserved</div>
           <div style={{ display: "flex", gap: 20, fontSize: 12 }}>
             <span style={{ color: F_GOLD, fontWeight: 700 }}>+254 712 770 999</span>
-            <span style={{ color: F_MUTED }}>info@fiascoconsultancy.co.ke</span>
+            <span style={{ color: F_MUTED }}>Developed by Asterleigh Systems</span>
           </div>
         </div>
       </div>
