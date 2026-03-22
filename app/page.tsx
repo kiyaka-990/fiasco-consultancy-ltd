@@ -417,10 +417,10 @@ export default function HomePage() {
             {/* Map + info */}
             <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
               <div style={{ borderRadius: 20, overflow: "hidden", border: `1px solid ${t.bdr}`, flex: 1, minHeight: 300 }}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15954.977044879952!2d36.81193!3d-1.28333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d22ba7f3c3%3A0xf0d3e18af58c2e4!2sNairobi%20CBD%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske" width="100%" height="100%" style={{ border: 0, display: "block", minHeight: 300 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Fiasco Location" />
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8166509!2d36.7126!3d-1.3192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1b9a1b1b1b1b%3A0x1!2sNyumba+Moja+Rd%2C+Karen%2C+Nairobi!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske" width="100%" height="100%" style={{ border: 0, display: "block", minHeight: 300 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Fiasco Location — Karen, Nairobi" />
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-                {([{ icon: "📍", l: "Head Office", v: "Standard Str, Standard Bld, Nairobi" }, { icon: "🏢", l: "Branch Office", v: "Likoni Rd, Joakim Est, Nairobi" }, { icon: "📞", l: "Emergency Line", v: "+254 712 770 999" }, { icon: "🕐", l: "Hours", v: "Mon–Sat, 8:00 AM – 5:00 PM" }] as { icon: string; l: string; v: string }[]).map((c, i) => (
+                {([{ icon: "📍", l: "Physical Address", v: "Nyumba Moja Rd, Karen, Nairobi" }, { icon: "📮", l: "Postal Address", v: "P.O. Box 5060-00100, Nairobi" }, { icon: "📞", l: "Emergency Line", v: "+254 712 770 999" }, { icon: "🕐", l: "Hours", v: "Mon–Sat, 8:00 AM – 5:00 PM" }] as { icon: string; l: string; v: string }[]).map((c, i) => (
                   <div key={i} style={{ ...glass(t, { padding: "18px 20px" }) }}>
                     <div style={{ fontSize: 20, marginBottom: 7 }}>{c.icon}</div>
                     <div style={{ fontSize: 9, fontFamily: t.sans, color: t.gold, letterSpacing: 1.5, textTransform: "uppercase" as const, marginBottom: 5, fontWeight: 700 }}>{c.l}</div>
