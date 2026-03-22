@@ -17,10 +17,13 @@ export interface Service {
 }
 
 export interface TeamMember {
-  img: string;
   name: string;
   role: string;
   spec: string;
+  initials: string;
+  palette: number;
+  icon: string;
+  bio?: string;
 }
 
 export interface Testimonial {
@@ -110,10 +113,10 @@ export const SERVICES: Service[] = [
 ];
 
 export const TEAM: TeamMember[] = [
-  { img: IMG.t1, name: "Amelia Wangui", role: "Head of Crisis Response", spec: "Rapid Intervention & Stabilization" },
-  { img: IMG.t2, name: "Steve Nyagah", role: "Senior Turnaround Strategist", spec: "Project Recovery & Execution" },
-  { img: IMG.t3, name: "Grace Elizabeth", role: "Forensic Audit Specialist", spec: "Investigation & Compliance" },
-  { img: IMG.t4, name: "Michael Wainaina", role: "Reputation & Comms Lead", spec: "Media Defense & PR Strategy" },
+  { name: "Amelia Wangui", role: "Head of Crisis Response", spec: "Rapid Intervention & Stabilization", initials: "AW", palette: 0, icon: "crisis", bio: "15+ years in crisis management. Leads all emergency deployments across Kenya, Uganda and Tanzania. Certified in organizational resilience and risk management." },
+  { name: "Steve Nyagah", role: "Senior Turnaround Strategist", spec: "Project Recovery & Execution", initials: "SN", palette: 1, icon: "strategy", bio: "Rescued 80+ failing projects across East Africa. Former PMP-certified project director with deep experience in infrastructure, tech, and FMCG sectors." },
+  { name: "Grace Elizabeth", role: "Forensic Audit Specialist", spec: "Investigation & Compliance", initials: "GE", palette: 2, icon: "forensic", bio: "Court-qualified expert witness and certified fraud examiner. Has led forensic investigations totaling over KES 2B in recovered or secured assets." },
+  { name: "Michael Wainaina", role: "Reputation & Comms Lead", spec: "Media Defense & PR Strategy", initials: "MW", palette: 3, icon: "comms", bio: "Former journalist turned crisis communications expert. Has managed media fallout for 30+ organizations including listed companies and NGOs." },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [

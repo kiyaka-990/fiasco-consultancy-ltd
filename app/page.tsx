@@ -4,6 +4,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import TeamCard from "@/components/TeamCard";
 import { SLIDES, STATS, SERVICES, PROCESS, TESTIMONIALS, BLOGS, PROJECTS, TEAM, IMG } from "@/lib/data";
 import { theme } from "@/lib/theme";
 import type { Service, Slide, Testimonial, Project, BlogPost, TeamMember, ProcessStep, Stat } from "@/lib/data";
@@ -82,24 +83,6 @@ function ProjCard({ p, t, T }: { p: Project; t: ReturnType<typeof theme>; T: str
         <div style={{ marginTop: 16, color: t.gold, fontSize: 13, fontFamily: t.sans, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: 6 }}>
           View Case Study <span style={{ transition: T, transform: hov ? "translateX(5px)" : "translateX(0)" }}>→</span>
         </div>
-      </div>
-    </div>
-  );
-}
-
-function TeamCard({ m, t, T }: { m: TeamMember; t: ReturnType<typeof theme>; T: string }) {
-  const [hov, setHov] = useState(false);
-  return (
-    <div onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
-      style={{ ...glass(t, { textAlign: "center", overflow: "hidden" }), transition: T, transform: hov ? "translateY(-6px)" : "translateY(0)", boxShadow: hov ? `0 24px 60px rgba(0,0,0,0.3), 0 0 0 1px rgba(200,168,75,0.25)` : "none", border: `1px solid ${hov ? "rgba(200,168,75,0.4)" : t.bdr}` }}>
-      <div style={{ height: 200, overflow: "hidden", position: "relative" }}>
-        <Image src={m.img} alt={m.name} fill sizes="25vw" style={{ objectFit: "cover", objectPosition: "top", filter: "brightness(0.78)", transform: hov ? "scale(1.06)" : "scale(1)", transition: T }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top,rgba(8,12,20,0.82) 0%,transparent 55%)" }} />
-      </div>
-      <div style={{ padding: "20px 18px 24px" }}>
-        <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, fontFamily: t.serif, color: t.fg }}>{m.name}</div>
-        <div style={{ color: t.gold, fontSize: 12, fontFamily: t.sans, fontWeight: 600, marginBottom: 6 }}>{m.role}</div>
-        <div style={{ fontSize: 11, color: t.fgMuted, fontFamily: t.sans }}>{m.spec}</div>
       </div>
     </div>
   );
@@ -337,7 +320,7 @@ export default function HomePage() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <SH tag="Our Specialists" title="Meet the Crisis Team" sub="East Africa's most experienced crisis management and strategic consulting professionals." t={t} />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 24 }}>
-            {TEAM.map((m: TeamMember, i: number) => <TeamCard key={i} m={m} t={t} T={T} />)}
+            {TEAM.map((m: TeamMember, i: number) => <TeamCard key={i} member={m} dark={dark} />)}
           </div>
         </div>
       </section>

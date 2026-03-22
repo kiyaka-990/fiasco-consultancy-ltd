@@ -4,6 +4,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import TeamCard from "@/components/TeamCard";
 import { TEAM, PROCESS, IMG } from "@/lib/data";
 import { theme } from "@/lib/theme";
 import type { TeamMember, ProcessStep } from "@/lib/data";
@@ -157,17 +158,7 @@ export default function AboutPage() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 24 }}>
             {TEAM.map((m: TeamMember, i: number) => (
-              <div key={i} style={{ ...glass({ textAlign: "center" as const, overflow: "hidden" }) }}>
-                <div style={{ height: 200, overflow: "hidden", position: "relative" }}>
-                  <Image src={m.img} alt={m.name} fill sizes="25vw" style={{ objectFit: "cover", objectPosition: "top" }} />
-                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top,rgba(8,12,20,0.82) 0%,transparent 55%)" }} />
-                </div>
-                <div style={{ padding: "18px 16px 22px" }}>
-                  <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, fontFamily: t.serif, color: t.fg }}>{m.name}</div>
-                  <div style={{ color: t.gold, fontSize: 12, fontFamily: t.sans, fontWeight: 600, marginBottom: 6 }}>{m.role}</div>
-                  <div style={{ fontSize: 11, color: t.fgMuted, fontFamily: t.sans }}>{m.spec}</div>
-                </div>
-              </div>
+              <TeamCard key={i} member={m} dark={dark} size="sm" />
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: 40 }}>
